@@ -1,0 +1,288 @@
+{
+	"info": {
+		"_postman_id": "5fcf831c-1b5e-4b19-80ac-e3a0321c13b6",
+		"name": "HallBooking API",
+		"description": "Hall Booking API using NodeJS and MongoDB",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27692024"
+	},
+	"item": [
+		{
+			"name": "List of all rooms",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://hallbooking-api-ka1s.onrender.com/get",
+					"protocol": "https",
+					"host": [
+						"hallbooking-api-ka1s",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"get"
+					]
+				},
+				"description": "This end-point will get the list of all the rooms."
+			},
+			"response": []
+		},
+		{
+			"name": "Create a new room",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"numberOfSeats\": \"1000\",\r\n    \"amenities\": [\"Projector\", \"Whiteboard\", \"WiFi\", \"Speakers\", \"Mic\"],\r\n    \"pricePerHour\": \"₹15000\",\r\n    \"roomNo\": \"012\",\r\n    \"roomName\": \"Conference Hall\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://hallbooking-api-ka1s.onrender.com/newHall",
+					"protocol": "https",
+					"host": [
+						"hallbooking-api-ka1s",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"newHall"
+					]
+				},
+				"description": "A room can be created using this end-point"
+			},
+			"response": []
+		},
+		{
+			"name": "Booking Sucessful",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"roomNo\": \"011\",\r\n    \"customerName\": \"Vinayak Mahadev\",\r\n    \"startTime\": \"11:00 AM\",\r\n    \"endTime\": \"05:00 PM\",\r\n    \"date\": \"2023-11-011\",\r\n    \"ifBooked\": \"true\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://hallbooking-api-ka1s.onrender.com/hallbooking",
+					"protocol": "https",
+					"host": [
+						"hallbooking-api-ka1s",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"hallbooking"
+					]
+				},
+				"description": "A room can be booked using this end-point"
+			},
+			"response": []
+		},
+		{
+			"name": "If same room is booked again",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"roomNo\": \"010\",\r\n    \"customerName\": \"Vinayak Mahadev\",\r\n    \"startTime\": \"10:00 AM\",\r\n    \"endTime\": \"10:00 PM\",\r\n    \"date\": \"2023-11-04\",\r\n    \"ifBooked\": \"true\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://hallbooking-api-ka1s.onrender.com/hallbooking",
+					"protocol": "https",
+					"host": [
+						"hallbooking-api-ka1s",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"hallbooking"
+					]
+				},
+				"description": "If the same room is chosen for booking, then a message \"Already booked\" would be displayed."
+			},
+			"response": [
+				{
+					"name": "If same room is booked again",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"roomNo\": \"010\",\r\n    \"customerName\": \"Vinayak Mahadev\",\r\n    \"startTime\": \"10:00 AM\",\r\n    \"endTime\": \"10:00 PM\",\r\n    \"date\": \"2023-11-04\",\r\n    \"ifBooked\": \"true\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://hallbooking-api-ka1s.onrender.com/hallbooking",
+							"protocol": "https",
+							"host": [
+								"hallbooking-api-ka1s",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"hallbooking"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Mon, 30 Oct 2023 15:04:13 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "CF-Ray",
+							"value": "81e48cad9a896eef-BOM"
+						},
+						{
+							"key": "CF-Cache-Status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"25-9S+KxrfVs0b10xkfgaKKkcT9yYM\""
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "rndr-id",
+							"value": "27cbc4ce-3a47-4fd4"
+						},
+						{
+							"key": "x-powered-by",
+							"value": "Express"
+						},
+						{
+							"key": "x-render-origin-server",
+							"value": "Render"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Hall is already booked!\"\n}"
+				}
+			]
+		},
+		{
+			"name": "List of all rooms with Customer name and Booking status",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://hallbooking-api-ka1s.onrender.com/listRooms",
+					"protocol": "https",
+					"host": [
+						"hallbooking-api-ka1s",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"listRooms"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List of Rooms with Customer name",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://hallbooking-api-ka1s.onrender.com/listCustomers",
+					"protocol": "https",
+					"host": [
+						"hallbooking-api-ka1s",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"listCustomers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "No of times the rooms booked with customer name",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://hallbooking-api-ka1s.onrender.com/customerBookings?customerName=Leo",
+					"protocol": "https",
+					"host": [
+						"hallbooking-api-ka1s",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"customerBookings"
+					],
+					"query": [
+						{
+							"key": "customerName",
+							"value": "Leo"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
